@@ -1,0 +1,89 @@
+{
+  "expo": {
+    "name": "Memorial",
+    "slug": "memorial",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#f7f3ee"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.memorial.app",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "사진을 기억으로 저장하기 위해 갤러리 접근이 필요해요.",
+        "NSCameraUsageDescription": "사진을 촬영해 기억으로 저장하기 위해 카메라 접근이 필요해요.",
+        "NSMicrophoneUsageDescription": "음성 기록을 위해 마이크 접근이 필요해요."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#f7f3ee"
+      },
+      "package": "com.memorial.app",
+      "googleServicesFile": "./google-services.json",
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.CAMERA",
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.VIBRATE",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "versionCode": 1
+    },
+    "scheme": "memorial",
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#f7f3ee",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "사진을 기억으로 저장하기 위해 갤러리 접근이 필요해요.",
+          "cameraPermission": "사진을 촬영해 기억으로 저장하기 위해 카메라 접근이 필요해요."
+        }
+      ],
+      "expo-dev-client",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.871980262126-d0aplr782e735s4o0hlia5ac1rvepi1m"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f297c257-42ff-4d2e-a14f-c389458e39fa"
+      }
+    },
+    "owner": "j1nowo"
+  }
+}
