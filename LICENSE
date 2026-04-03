@@ -1,25 +1,21 @@
-Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)
+MIT License
 
-Copyright (c) 2026 yjw02. All Rights Reserved.
+Copyright (c) 2026 yjw02
 
-이 저작물은 크리에이티브 커먼즈 저작자표시-비영리 4.0 국제 라이선스에 따라 이용할 수 있습니다.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-=======================================================================
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-You are free to:
-  - Share: copy and redistribute the material in any medium or format
-  - Adapt: remix, transform, and build upon the material
-
-Under the following terms:
-  - Attribution (BY): You must give appropriate credit, provide a link to
-    the license, and indicate if changes were made.
-  - NonCommercial (NC): You may NOT use the material for commercial purposes.
-
-=======================================================================
-
-상업적 이용 금지:
-이 소프트웨어 및 소스코드는 비영리 목적으로만 사용할 수 있습니다.
-영리 목적의 사용, 복제, 배포, 판매는 저작권자의 명시적인 서면 동의 없이
-금지됩니다.
-
-Full license text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
