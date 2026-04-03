@@ -4,6 +4,8 @@
   <em>Preserve who you are — so the people you love can always find you.</em>
 </p>
 
+> ⚠️ **Work in Progress** — This project is currently under active development. AI prompts are not yet finalized and the backend may have unstable behavior. Not production-ready.
+
 <p align="center">
   <img src="https://img.shields.io/badge/React_Native-0.81.5-61DAFB?style=flat-square&logo=react&logoColor=white" />
   <img src="https://img.shields.io/badge/Expo-SDK_54-000020?style=flat-square&logo=expo&logoColor=white" />
@@ -225,7 +227,6 @@ Create `backend/.env`:
 FIREBASE_PROJECT_ID=your-firebase-project-id
 FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_KEY\n-----END PRIVATE KEY-----\n"
 FIREBASE_CLIENT_EMAIL=firebase-adminsdk-xxxxx@your-project.iam.gserviceaccount.com
-GEMINI_API_KEY=your-gemini-api-key
 GROQ_API_KEY=your-groq-api-key
 PORT=3000
 ```
