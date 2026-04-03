@@ -1,10 +1,9 @@
-// services/aiService.js - Gemini AI 전담 파일
+// services/aiService.js - AI 서비스 전담 파일 (Groq)
 //
 // ⚠️ AI를 다른 서비스로 교체할 때 이 파일만 수정하면 돼.
 //    외부에서 쓰는 함수 이름(generateDailyQuestions, chatAsPersona)은 유지해줘.
 //
-// 사용 모델: gemini-2.0-flash (무료, 하루 1500회)
-// API 키 발급: https://aistudio.google.com/apikey
+// 사용 모델: llama-3.3-70b-versatile (Groq, 무료 30RPM / 14400RPD)
 
 const Groq = require('groq-sdk');
 
@@ -18,7 +17,7 @@ const GROQ_MODEL = 'llama-3.3-70b-versatile';
 // - 실패 시 null 반환 (throw 하지 않아 500 번짐 방지)
 // ─────────────────────────────────────────────────────────────────────────────
 
-async function callGemini(prompt) {
+async function callGroq(prompt) {
   try {
     const completion = await groq.chat.completions.create({
       model: GROQ_MODEL,
@@ -138,10 +137,10 @@ ${prevList}
 {"question":"...", "followUp":"..."}
   `.trim();
 
-  const raw = await callGemini(prompt);
+  const raw = await callGroq(prompt);
 
   if (!raw) {
-    // callGemini 실패 → 폴백 질문 반환
+    // callGroq 실패 → 폴백 질문 반환
     const fallbackMap = FALLBACK_QUESTIONS[lang] || FALLBACK_QUESTIONS.ko;
     const fallback = fallbackMap[category] || {
       text: isEn ? 'What moment from today stands out most in your memory?' : '오늘 하루 어떤 순간이 가장 기억에 남나요?',
@@ -239,12 +238,12 @@ ${memoryText}
 가족 메시지: ${userMessage}
   `.trim();
 
-  const text = await callGemini(prompt);
+  const text = await callGroq(prompt);
   return text || '잘 기억이 안 나네... 다시 한번 말해줄 수 있어?';
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Gemini 실패 시 카테고리별 기본 질문 (폴백)
+// Groq 실패 시 카테고리별 기본 질문 (폴백)
 // ─────────────────────────────────────────────────────────────────────────────
 const FALLBACK_QUESTIONS = {
   ko: {
@@ -307,7 +306,7 @@ ${memoryList}
 이 중에서 하나 골라서 더 자세히 물어봐.
   `.trim();
 
-  const text = await callGemini(prompt);
+  const text = await callGroq(prompt);
   return text || (isEn ? `${userName}, how have you been lately?` : `${userName}, 요즘 어떻게 지내고 있어?`);
 }
 
@@ -485,9 +484,9 @@ ${userName} 메시지: ${userMessage}
     }
   }
 
-  console.log('Gemini 프롬프트 길이:', prompt.length, '자');
-  const text = await callGemini(prompt);
-  if (text) console.log('Gemini 원본 응답:', text);
+  console.log('[Groq] 프롬프트 길이:', prompt.length, '자');
+  const text = await callGroq(prompt);
+  if (text) console.log('[Groq] 응답:', text);
   return text || '잠깐 생각이 필요해... 조금 있다가 다시 말해줄래?';
 }
 
@@ -516,7 +515,7 @@ async function extractMemoryFromChat(messages) {
 ${messages.map((m) => `${m.role === 'user' ? '주인' : 'Doll'}: ${m.content}`).join('\n')}
   `.trim();
 
-  const raw = await callGemini(prompt);
+  const raw = await callGroq(prompt);
   if (!raw) return [];
   const jsonMatch = raw.match(/\[[\s\S]*\]/);
   if (jsonMatch) {

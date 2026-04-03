@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white" />
   <img src="https://img.shields.io/badge/Node.js-Express_5-339933?style=flat-square&logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Firebase-Firestore%20%7C%20Auth%20%7C%20Storage-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
-  <img src="https://img.shields.io/badge/Gemini-2.0_Flash-4285F4?style=flat-square&logo=google&logoColor=white" />
+  <img src="https://img.shields.io/badge/Groq-Llama_3.3-F55036?style=flat-square&logo=groq&logoColor=white" />
   <img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=flat-square" />
 </p>
 
@@ -58,8 +58,7 @@ Memorial addresses this gap by giving people a way to **document their identity 
 | **Database** | Firebase Firestore |
 | **Authentication** | Firebase Auth — Email/Password + Google Sign-In |
 | **Storage** | Firebase Storage |
-| **AI — Primary** | Google Gemini 2.0 Flash API |
-| **AI — Fallback** | Groq (Llama 3) |
+| **AI** | Groq — Llama 3.3 70B Versatile |
 | **Mobile Build** | EAS Build (Expo Application Services) |
 | **Web Deployment** | Vercel |
 | **Backend Deployment** | Render (free tier) |
@@ -94,21 +93,19 @@ Memorial addresses this gap by giving people a way to **document their identity 
               │   Render               │
               └───────────┬────────────┘
                           │
-           ┌──────────────┴──────────────┐
-           │                             │
-  ┌────────▼────────┐          ┌─────────▼────────┐
-  │  Gemini 2.0     │          │  Groq (Llama 3)  │
-  │  Flash API      │          │  Fallback LLM    │
-  └─────────────────┘          └──────────────────┘
+                          │
+              ┌───────────▼────────────┐
+              │  Groq                  │
+              │  Llama 3.3 70B         │
+              └────────────────────────┘
 ```
 
 **Data flow — Doll Chat:**
 1. Client sends message + Firebase ID token to `/api/doll/chat`
 2. Backend verifies token via Firebase Admin SDK
 3. Backend fetches Doll profile + recent memories from Firestore
-4. Constructs system prompt with personality & memory context → Gemini API
-5. Falls back to Groq if Gemini is unavailable
-6. Response streamed back to client; key memories auto-extracted every 10 turns
+4. Constructs system prompt with personality & memory context → Groq API
+5. Response returned to client; key memories auto-extracted every 10 turns
 
 ---
 
@@ -190,7 +187,7 @@ memorial/
     │   ├── memoryAlbum.js
     │   └── questions.js
     ├── services/
-    │   └── aiService.js           # Gemini + Groq orchestration
+    │   └── aiService.js           # Groq (Llama 3.3) AI orchestration
     ├── middleware/
     │   └── auth.js                # Firebase token verification
     └── firebase-admin.js
@@ -206,8 +203,7 @@ memorial/
 - [Expo CLI](https://docs.expo.dev/get-started/installation/) — `npm install -g expo-cli`
 - [EAS CLI](https://docs.expo.dev/eas/) — `npm install -g eas-cli`
 - A Firebase project with **Auth**, **Firestore**, and **Storage** enabled
-- Google Gemini API key — [Google AI Studio](https://aistudio.google.com/)
-- Groq API key — [console.groq.com](https://console.groq.com/) *(optional fallback)*
+- Groq API key — [console.groq.com](https://console.groq.com/)
 
 ### 1. Clone
 
