@@ -1,4 +1,4 @@
-<![CDATA[<h1 align="center">Memorial</h1>
+<h1 align="center">Memorial</h1>
 
 <p align="center">
   <em>Preserve who you are — so the people you love can always find you.</em>
@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/Node.js-Express_5-339933?style=flat-square&logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Firebase-Firestore%20%7C%20Auth%20%7C%20Storage-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
   <img src="https://img.shields.io/badge/Gemini-2.0_Flash-4285F4?style=flat-square&logo=google&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=flat-square" />
 </p>
 
 ---
@@ -299,12 +299,15 @@ eas build --profile development --platform android
 
 ## License
 
-This project is licensed under the **MIT License**.  
-See [LICENSE](./LICENSE) for details.
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
+
+- Free to share and adapt for **non-commercial purposes** with attribution.
+- **Commercial use is prohibited** without explicit written permission from the copyright holder.
+
+See [LICENSE](./LICENSE) for details · [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ---
 
 <p align="center">
   Built with care · Copyright © 2026 <a href="https://github.com/J1NOwO">yjw02</a>
 </p>
-]]>
