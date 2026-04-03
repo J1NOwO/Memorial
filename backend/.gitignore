@@ -1,2 +1,27 @@
 node_modules
+
+# 환경변수 파일 (절대 깃에 올리면 안 됨! Firebase Admin 키 노출 위험)
 .env
+.env.*
+.env*.local
+
+# Firebase 서비스 계정 키 (절대 공개 금지)
+firebase-adminsdk*.json
+*serviceAccount*.json
+*service-account*.json
+google-services.json
+GoogleService-Info.plist
+
+# 서명 키 / 인증서
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+*.pem
+*.cer
+
+# 로그
+*.log
+logs/
+server.log

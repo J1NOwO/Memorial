@@ -10,7 +10,6 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-*.local
 
 # Editor directories and files
 .vscode/*
@@ -25,5 +24,23 @@ dist-ssr
 
 # 환경변수 파일 (절대 깃에 올리면 안 됨! Firebase 키 노출 위험)
 .env
-.env.local
-.env.production
+.env.*
+.env*.local
+*.local
+
+# Firebase 서비스 계정 키 / 모바일 설정
+firebase-adminsdk*.json
+*serviceAccount*.json
+*service-account*.json
+google-services.json
+GoogleService-Info.plist
+
+# 서명 키 / 인증서
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.cer
+*.pem
